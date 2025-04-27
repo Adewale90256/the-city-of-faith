@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RCCG City of Faith</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="bg-black over">
+    <header class="bg-center bg-cover w-full place-content-center">
+      <div class="flex text-white fixed top-0 left-0 right-0 z-10">
+        <div
+          class="flex flex-col items-center bg-black h-40 w-50 p-2 rounded-b"
+        >
+          <img
+            src="./images/redeem logo.png"
+            alt="logo rccg"
+            class="md:h-20 md:w-20 rounded-full"
+          />
+          <p class="text-center text-[13px] w-25 md:font-bold">RCCG</p>
+          <p class="text-[13px] md:font-bold">The City Of Faith</p>
+        </div>
+
+        <div class="bg-black w-full h-20">
+          <nav class="flex h-20">
+            <ul class="hidden md:flex w-full h-20 justify-evenly items-center">
+              <li
+                class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+              >
+                <a href="Home">HOME</a>
+              </li>
+
+              <li
+                class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+              >
+                <a href="the-church.html">THE CHURCH</a>
+              </li>
+
+              <li class="relative">
+                <button
+                  id="showSubList"
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+                >
+                  THE CITY OF FAITH
+                  <i class="fa-solid fa-circle-chevron-down"></i>
+                </button>
+                <div class="">
+                  <ul
+                    id="subList"
+                    class="hidden absolute bg-black rounded-b w-full p-2 mt-2 group-hover:block:"
+                  >
+                    <li
+                      class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300"
+                    >
+                      <a href="">About Church</a>
+                    </li>
+                    <li
+                      class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300"
+                    >
+                      <a href="">Pastorate</a>
+                    </li>
+                    <li
+                      class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300"
+                    >
+                      <a href="">Departments</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li
+                class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+              >
+                <a href="the-church">SERVICES</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="flex md:hidden justify-end items-center bg-black p-4 h-20">
+          <button id="clickToShowMenu" class="cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <!--show until click-->
+        <div
+          id="showlistOnSmallScreen"
+          class="hidden md:hidden lg:hidden bg-black w-160 absolute rounded"
+        >
+          <div class="bg-black w-full">
+            <div
+              id="clickToHide"
+              class="cursor-pointer font-bold px-4 py-2 w-full hover:bg-gray-800 hover:translate-x-1"
+            >
+              X
+            </div>
+
+            <nav class="">
+              <ul class="w-full justify-evenly items-center">
+                <li
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                >
+                  <a href="Home">HOME</a>
+                </li>
+
+                <li
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                >
+                  <a href="the-church.html">THE CHURCH</a>
+                </li>
+
+                <li class="relative">
+                  <button
+                    id="smScreenshowSubList"
+                    class="hover:bg-gray-800 text-left w-full px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                  >
+                    THE CITY OF FAITH
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                  </button>
+                  <div class="inline">
+                    <ul
+                      id="smScreensubList"
+                      class="hidden lg:hidden sm:inline absolute bg-black rounded-b w-full p-2 mt-2 group-hover:block hover:translate-x-1"
+                    >
+                      <li
+                        class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300 hover:translate-x-1"
+                      >
+                        <a href="">About Church</a>
+                      </li>
+                      <li
+                        class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300 hover:translate-x-1"
+                      >
+                        <a href="">Pastorate</a>
+                      </li>
+                      <li
+                        class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300 hover:translate-x-1"
+                      >
+                        <a href="">Departments</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                >
+                  <a href="the-church">SERVICES</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="w-full h-100 overflow-hidden">
+      <div
+        id="background-slider"
+        class="w-full h-100 bg-center flex justify-center items-center bg-cover shadow-lg transition-all duration-all relative overflow-hidden"
+      >
+        <div
+          id="bibleTextSlider"
+          class="block relative w-full text-center text-white font-bold text-2xl fot mt-20 p-2"
+        >
+          <!--- <p class="text-4xl text-white font-bold text-center">
+          The entrace of you word giveth light, it giveth understanding unto the
+          simple. <br /><span>Psalm 119:130</span>
+        </p>-->
+        </div>
+      </div>
+    </div>
+
+    <!--Body Content-->
+    <main class="h-full grid md:grid-cols-2 grid-cols-1 gap-3">
+      <!--Section 1-->
+      <section class="h-full">
+        <div>
+          <div
+            class="flex flex-col md:flex-row justify-center items-center p-2"
+          >
+            <img
+              src="./images/city-logo.jpg"
+              alt=""
+              class="size-35 object-cover rounded-full"
+            />
+            <div>
+              <h1 class="text-center text-white font-bold">
+                THE REDEEMED CHRISTAIN CHURCH OF GOD.
+              </h1>
+              <h2 class="text-center text-white font-bold">
+                THE CITY OF FAITH PARISH.
+              </h2>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center p-2 space-y-1">
+            <h2 class="text-left text-2xl font-light">Join us Every Sunday</h2>
+            <img
+              src="./images/city of faith filer.jpg"
+              alt=""
+              class="size-full md:size-125 shadow rounded"
+            />
+          </div>
+
+          <div class="h-full p-2 flex flex-col space-y-2 bg-black">
+            <h3
+              class="text-center text-blue-400 font-bold text-2xl font-mono shadow-blue-700 shadow-2xl"
+            >
+              WHAT WE BELIEVE
+            </h3>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-1 text-white"
+            >
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE in one God, who exists in three Persons — the Father,
+                the Son and the Holy Spirit. He is good, loving, righteous, holy
+                and just.
+              </p>
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that the Bible is God's Word. It is inspired by the
+                Holy Spirit and accurate. It is our perfect guide and final
+                authority in all matters of life.
+              </p>
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that the Holy Spirit is our Comforter. He guides us
+                in all areas of our lives. He also blesses us with spiritual
+                gifts and empowers us to yield the fruit of the Spirit and live
+                a life pleasing unto God.
+              </p>
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that God wants to transform, heal and prosper us, so
+                that we can live blessed and victorious lives that will impact
+                and help others.
+              </p>
+
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that salvation is the gift of God to man. This gift
+                is received by grace through faith in Jesus Chris
+              </p>
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that water baptism is a symbol of the cleansing power
+                of God and a testimony of our faith in the Lord Jesus Christ.
+              </p>
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVEthat sin has separated us all (mankind) from God, and
+                that only through Jesus Christ can we (mankind) be reconciled to
+                God.
+              </p>
+
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that the Holy Communion is a celebration of Jesus'
+                death and our remembrance of Him.
+              </p>
+
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that we are called to preach the gospel to all
+                nations
+              </p>
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that our Lord Jesus Christ is coming back again just
+                as He promised.
+              </p>
+              <p
+                class="p-1 bg-blue-400 text-center shadow-lg rounded lg:w-124 md:w-101 duration-300 hover:scale-101"
+              >
+                <i
+                  class="fa-solid fa-check text-left border-white border-2 p-1 rounded-full"
+                ></i>
+                WE BELIEVE that Jesus Christ is both God and Man. He was
+                conceived by the Holy Spirit and born of the virgin Mary. He
+                lived a sinless life, took all our sins upon Himself, died and
+                rose again. Today, He is seated at the right hand of the Father
+                as our High Priest and Mediator.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Section 2-->
+      <section class="h-full">
+        <div class="w-full grid grid-cols-1 text-white p-4 gap-6">
+          <div class="w-full flex flex-col pr-7 items-end">
+            <h3 class="font-bold text-2xl">Testimony</h3>
+            <p class="font-bold">Share Your Testimony</p>
+            <form
+              action="mailto:"
+              class="flex flex-col justify-center items-center bg-red-500 rounded text-white p-4 shadow-red-400 shadow-lg"
+              method="POST"
+              enctype="text/plain"
+            >
+              <label for="name">Name: </label>
+              <input
+                type="text"
+                name="name"
+                class="border-1 border-gray-400 p-1 rounded w-90"
+              />
+
+              <label for="email">Email:</label>
+              <input
+                type="text"
+                name="email"
+                class="border-1 border-gray-400 p-1 rounded w-90"
+              />
+
+              <label for="number">Mobile No:</label>
+              <input
+                type="number"
+                name="mobile number"
+                class="border-1 border-gray-400 p-1 rounded w-90"
+              />
+              <label for="testimony">Testimony:</label>
+              <textarea
+                name="testimony"
+                cols="30"
+                rows="10"
+                class="border-1 border-gray-400 p-1 rounded w-90"
+              ></textarea>
+              <button
+                type="submit"
+                class="p-2 bg-black mt-5 text-white rounded shadow-2xl w-45 hover:bg-gray-800"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+
+          <div class="w-full flex flex-col items-end pr-7">
+            <h3 class="font-bold text-2xl">Prayer Request</h3>
+            <p class="font-bold">Share Your Prayer</p>
+            <form
+              action="mailto:"
+              class="flex flex-col justify-center items-center rounded bg-red-500 text-white p-4 shadow-red-400 shadow-lg"
+              method="POST"
+              enctype="text/plain"
+            >
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                name="name"
+                class="border-1 border-gray-400 rounded p-1 w-90"
+              />
+
+              <label for="email">Email:</label>
+              <input
+                type="text"
+                name="email"
+                class="border-1 border-gray-400 p-1 rounded w-90"
+                rounded
+                p-1
+              />
+
+              <label for="number">Mobile No:</label>
+              <input
+                type="number"
+                name="mobile number"
+                class="border-1 border-gray-400 p-1 rounded w-90"
+              />
+              <label for="testimony">Prayer:</label>
+              <textarea
+                name="testimony"
+                cols="30"
+                rows="10"
+                class="border-1 border-gray-400 p-1 rounded w-90"
+              ></textarea>
+
+              <button
+                type="submit"
+                class="p-2 bg-black mt-5 text-white rounded shadow-2xl w-45 hover:bg-gray-800"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section
+      class="w-full h-full grid grid-cols-1 md:grid-cols-2 place-content-center gap-5"
+    >
+      <div
+        class="bg-[url('./images/worship.jpg')] flex justify-center items-center bg-no-repeat bg-cover w-full h-100"
+      >
+        <p class="text-white text-[30px] w-[350px] font-bold">
+          COME AND WORSHIP
+          <span class="text-[25px] font-medium w-full">WITH THE SAINT</span>
+        </p>
+      </div>
+      <div
+        class="bg-[url('./images/prayer.avif')] bg-no-repeat flex justify-center items-center bg-cover w-full h-100"
+      >
+        <p class="text-white text-[30px] w-[350px] font-bold">
+          PRAY AND COMMUNE
+          <span class="text-[25px] font-medium w-full">WITH THE SAINT</span>
+        </p>
+      </div>
+      <div
+        class="bg-[url('./images/bible-study.avif')] bg-no-repeat flex justify-center items-center bg-cover w-full h-100"
+      >
+        <p class="text-white text-[35px] w-[350px] font-bold">
+          STUDY THE WORD
+          <span class="text-[25px] font-medium w-full">WITH THE SAINT</span>
+        </p>
+      </div>
+      <div
+        class="bg-[url('./images/love-church.jpg')] bg-no-repeat flex justify-center items-center bg-cover w-full h-100"
+      >
+        <p class="text-white text-[50px] w-[350px] font-bold">
+          LOVE GOD
+          <span class="text-[40px] font-medium w-full">LOVE IS PEOPLE</span>
+        </p>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white p-8">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <!-- Church Info -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">The City Of Faith Church</h2>
+          <p>1170 Corydon Avenue, Winnpeg, Manitoba.</p>
+          <p>Phone:</p>
+          <p>Email: rccgthecityoffaith@gmail.com</p>
+        </div>
+
+        <!-- Service Times -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Service Times</h2>
+          <p>Sundays: 9:30 AM - 11:30 AM</p>
+          <p>Wednesdays: 6:00 PM (Bible Study)</p>
+        </div>
+
+        <!-- Follow Us -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Follow Us</h2>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.facebook.com/rccgthecityoffaith/"
+              target="_blank"
+              class="hover:bg-blue-500 p-1 rounded shadow-lg duration-300 hover:scale-110"
+              ><i class="fa-brands fa-facebook text-blue-500 animate-pulse"></i>
+              Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/rccgthecityoffaith/"
+              target="_blank"
+              class="hover:bg-blue-500 p-1 rounded shadow-lg duration-300 hover:scale-110"
+              ><i
+                class="fa-brands fa-square-instagram text-pink-500 animate-pulse"
+              ></i>
+              Instagram</a
+            >
+            <a
+              href="#"
+              class="hover:bg-blue-500 p-1 rounded shadow-lg duration-300 hover:scale-110"
+              ><i class="fa-brands fa-youtube text-red-500 animate-pulse"></i>
+              YouTube</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-gray-400 text-sm">
+        <p>© 2025 The City Of Faith Church. All rights reserved.</p>
+        <p>"Shining the Light of Christ to the Nations."</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
