@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastorate</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="bg-black">
+    <header class="bg-center bg-cover w-full place-content-center">
+      <div class="flex text-white fixed top-0 left-0 right-0 z-10">
+        <div
+          class="flex flex-col items-center bg-black h-20 w-50 p-2 rounded-b"
+        >
+          <!--<img
+            src="./images/redeem logo.png"
+            alt="logo rccg"
+            class="md:h-20 md:w-20 rounded-full"
+          />-->
+          <p class="text-center text-[13px] w-25 md:font-bold font-serif">
+            RCCG
+          </p>
+          <p class="text-[13px] md:font-bold font-serif">The City Of Faith</p>
+        </div>
+
+        <div class="bg-black w-full h-20">
+          <nav class="flex h-20">
+            <ul class="hidden md:flex w-full h-20 justify-evenly items-center">
+              <li
+                class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+              >
+                <a href="index.html">HOME</a>
+              </li>
+
+              <li
+                class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+              >
+                <a href="the-church.html">THE CHURCH</a>
+              </li>
+
+              <li class="relative">
+                <button
+                  id="showSubList"
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+                >
+                  THE CITY OF FAITH
+                  <i class="fa-solid fa-circle-chevron-down"></i>
+                </button>
+                <div class="">
+                  <ul
+                    id="subList"
+                    class="hidden absolute bg-black rounded-b w-full p-2 mt-2 group-hover:block:"
+                  >
+                    <li
+                      class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300"
+                    >
+                      <a href="about-church.html">About Church</a>
+                    </li>
+                    <li
+                      class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300"
+                    >
+                      <a href="pastorate.html">Pastorate</a>
+                    </li>
+                    <li
+                      class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300"
+                    >
+                      <a href="department.html">Departments</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li
+                class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300"
+              >
+                <a href="blog.html">Blog</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="flex md:hidden justify-end items-center bg-black p-4 h-20">
+          <button id="clickToShowMenu" class="cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <!--show until click-->
+        <div
+          id="showlistOnSmallScreen"
+          class="hidden translate-x-full transition-transform duration-500 md:hidden lg:hidden bg-black w-160 absolute rounded"
+        >
+          <div class="bg-black w-full">
+            <div
+              id="clickToHide"
+              class="cursor-pointer font-bold px-4 py-2 w-full hover:bg-gray-800 hover:translate-x-1"
+            >
+              X
+            </div>
+
+            <nav class="">
+              <ul class="w-full justify-evenly items-center">
+                <li
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                >
+                  <a href="index.html">HOME</a>
+                </li>
+
+                <li
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                >
+                  <a href="the-church.html">THE CHURCH</a>
+                </li>
+
+                <li class="relative">
+                  <button
+                    id="smScreenshowSubList"
+                    class="hover:bg-gray-800 text-left w-full px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                  >
+                    THE CITY OF FAITH
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                  </button>
+                  <div class="inline">
+                    <ul
+                      id="smScreensubList"
+                      class="hidden lg:hidden sm:inline absolute bg-black rounded-b w-full p-2 mt-2 group-hover:block hover:translate-x-1"
+                    >
+                      <li
+                        class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300 hover:translate-x-1"
+                      >
+                        <a href="about-church.html">About Church</a>
+                      </li>
+                      <li
+                        class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300 hover:translate-x-1"
+                      >
+                        <a href="pastorate.html">Pastorate</a>
+                      </li>
+                      <li
+                        class="hover:bg-gray-800 p-2 hover:shadow rounded duration-300 hover:translate-x-1"
+                      >
+                        <a href="department.html">Departments</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li
+                  class="hover:bg-gray-800 px-4 py-2 border-0 hover:shadow rounded transition-all duration-300 hover:translate-x-1"
+                >
+                  <a href="blog.html">Blog</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="w-full h-100 overflow-hidden">
+      <div
+        id="background-slider"
+        class="w-full h-100 bg-center flex justify-center items-center bg-cover shadow-lg transition-all duration-all relative overflow-hidden"
+      >
+        <div
+          id="bibleTextSlider"
+          class="block relative w-full text-center text-white font-bold text-2xl fot mt-20 p-2"
+        >
+          <!--- <p class="text-4xl text-white font-bold text-center">
+              The entrace of you word giveth light, it giveth understanding unto the
+              simple. <br /><span>Psalm 119:130</span>
+            </p>-->
+        </div>
+      </div>
+    </div>
+
+    <main class="w-full"></main>
+
+    <footer class="bg-gray-900 text-white p-8">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <!-- Church Info -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">The City Of Faith Church</h2>
+          <p>1170 Corydon Avenue, Winnpeg, Manitoba.</p>
+          <p>Phone:</p>
+          <p>Email: rccgthecityoffaith@gmail.com</p>
+        </div>
+
+        <!-- Service Times -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Service Times</h2>
+          <p>Sundays: 9:30 AM - 11:30 AM</p>
+          <p>Wednesdays: 6:00 PM (Bible Study)</p>
+        </div>
+
+        <!-- Follow Us -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Follow Us</h2>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.facebook.com/rccgthecityoffaith/"
+              target="_blank"
+              class="hover:bg-blue-500 p-1 rounded shadow-lg duration-300 hover:scale-110"
+              ><i class="fa-brands fa-facebook text-blue-500 animate-pulse"></i>
+              Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/rccgthecityoffaith/"
+              target="_blank"
+              class="hover:bg-blue-500 p-1 rounded shadow-lg duration-300 hover:scale-110"
+              ><i
+                class="fa-brands fa-square-instagram text-pink-500 animate-pulse"
+              ></i>
+              Instagram</a
+            >
+            <a
+              href="#"
+              class="hover:bg-blue-500 p-1 rounded shadow-lg duration-300 hover:scale-110"
+              ><i class="fa-brands fa-youtube text-red-500 animate-pulse"></i>
+              YouTube</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-gray-400 text-sm">
+        <p>© 2025 The City Of Faith Church. All rights reserved.</p>
+        <p>"Shining the Light of Christ to the Nations."</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
